@@ -1,3 +1,135 @@
+:root {
+  --x-orange: #ed5a2d;
+  --x-black-text: rgba(0, 0, 0);
+  --x-gold-text: rgba(159, 92, 93, 1);
+}
+
 body {
-  color: crimson;
+  font-family: "Didact Gothic", sans-serif;
+}
+
+header {
+  display: block;
+}
+
+.header-newsflash {
+  margin: 0;
+  padding: 2px 5px 2px 5px;
+  /* ?? why gutter */
+  background-color: var(--x-orange);
+  color: white;
+  text-align: center;
+}
+
+header {
+  margin-top: 50px;
+  margin-left: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+header h1 {
+  background-image: url("img/Sipple_Logo_540x.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* margin: 200px, 0; */
+  /* what are next 3 lines for? */
+  padding-top: 125px;
+  height: 0;
+  overflow: hidden;
+}
+
+.hamburger i {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.hamburger i line {
+  stroke: var(--x-black-text);
+  stroke-width: 1;
+  stroke-linecap: square;
+}
+
+.cart i {
+  /* padding: 20px; */
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.cart i line {
+  stroke: var(--x-black-text);
+  stroke-width: 1;
+  stroke-linecap: square;
+}
+
+.main-slideshow {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.main-slideshow h1,
+h2 {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+  padding: 10px;
+}
+
+.main-slideshow h1 {
+  font-size: 30px;
+}
+
+.main-slideshow button {
+  align: center;
+}
+
+.main-slideshow img {
+  opacity: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+section > h2 {
+  color: var(--x-black-text);
+  text-align: center;
+  font-size: 1.4;
+  text-shadow: none;
+}
+
+.what-style {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(120px 50px 120px 50px);
+  justify-items: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.what-style li {
+  display: inline-block;
+  list-style: none;
+  padding-top: 15px;
+  color: var(--x-gold-text);
+  font-size: 1.2em;
+}
+
+.what-style a:link {
+  text-decoration: none;
+}
+
+/* the link is same fomrat whether its normal, hovered or viisted or not */
+
+.what-style li img {
+  height: 50px;
+  width: 50px;
 }
