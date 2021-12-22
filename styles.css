@@ -133,6 +133,7 @@ section > h2 {
 }
 
 /* FRIDAY/NEXT: get alignment sorted are we working with conatiner or childern?*/
+/* is the li the problem?  use divs? */
 
 .what-style li {
   display: inline-block;
@@ -223,17 +224,32 @@ section > h2 {
 }
 
 .notes-table {
-  margin: 0px;
-  /* why not killing margin? */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 100px);
-  column-gap: 20px;
-  background-color: aquamarine;
+  grid-template-rows: repeat(4, auto);
+  align-items: center;
+  /* background-color: aquamarine; */
 }
 
 .notes-table div {
+  padding-left: 10px;
+  padding-right: 10px;
   list-style: none;
-  background-color: greenyellow;
-  color: red;
+  /* background-color: greenyellow;
+  color: red; */
+  text-align: center;
+  font-size: 1.2em;
 }
+
+/* is this ok? */
+.notes-table div img {
+  width: 50%;
+  height: 50%;
+}
+
+.notes-table div span {
+  font-weight: bold;
+  color: blue;
+}
+
+/* how to do the italic for Elton John */
