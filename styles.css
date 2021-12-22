@@ -1,4 +1,5 @@
 :root {
+  --x-white: rgba(255, 255, 255);
   --x-orange: #ed5a2d;
   --x-black-text: rgba(0, 0, 0);
   --x-gold-text: rgba(159, 92, 93, 1);
@@ -15,9 +16,8 @@ header {
 .header-newsflash {
   margin: 0;
   padding: 2px 5px 2px 5px;
-  /* ?? why gutter */
   background-color: var(--x-orange);
-  color: white;
+  color: var(--x-white);
   text-align: center;
 }
 
@@ -73,9 +73,12 @@ header h1 {
 
 .main-slideshow {
   position: relative;
-  overflow: hidden;
-  min-height: 400px;
+  width: 100%;
+
+  /* overflow: hidden; */
 }
+
+/* need to turn this inot a flex with arrows and 2 images */
 
 .main-slideshow h1,
 h2 {
@@ -93,14 +96,13 @@ h2 {
 
 .main-slideshow button {
   position: absolute;
-  bottom: 10%;
+  top: 50%;
   left: 50%;
   background-color: white;
   border-color: var(--x-gold-text);
   color: var(--x-gold-text);
   padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
   font-size: 1.2em;
 }
 
@@ -124,10 +126,10 @@ section > h2 {
 .what-style {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 120px);
+  grid-template-rows: repeat(2, auto);
   padding: 0;
-  /* justify-items: center;
-  align-items: center; */
+  /* justify-items: center; */
+  /* align-items: center; */
 }
 
 /* FRIDAY/NEXT: get alignment sorted are we working with conatiner or childern?*/
@@ -140,7 +142,7 @@ section > h2 {
   font-size: 1.2em;
 }
 
-.what-style a {
+.what-style li a {
   text-decoration: none;
   color: var(--x-gold-text);
 }
@@ -150,4 +152,88 @@ section > h2 {
 .what-style li img {
   height: 50px;
   width: 50px;
+}
+
+.meet-the-maker img {
+  width: 100%;
+  height: 100%;
+}
+
+.meet-the-maker h2 {
+  text-align: left;
+  padding: 0;
+  font-size: 2em;
+}
+
+/* why doesnt align  work ??? */
+.meet-the-maker hr {
+  text-align: left;
+  color: var(--x-orange);
+  width: 200px;
+}
+
+/* why doesnt this work ??? */
+.meet-the-maker hr::after {
+  color: var(--x-orange);
+  font-size: 1.5em;
+}
+
+/* why is top & left edge lighter? */
+.meet-the-maker button {
+  top: 0%;
+  left: 0%;
+  background-color: white;
+  border-color: var(--x-black-text);
+  /* border-color: red; */
+  color: var(--x-black-text);
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.hero-image img {
+  margin-top: 100px;
+  width: 100%;
+  height: 100%;
+}
+
+/* need to center this */
+.sipple-notes img {
+  margin-top: 20px;
+  text-align: center;
+  width: 80%;
+  height: 80%;
+}
+
+.notes-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  /* why not centering? */
+  /* why gap to right of glasses? */
+  background-color: DodgerBlue;
+}
+
+.notes-container > div {
+  background-color: pink;
+  /* how do I align 5 sips to center-right and the 5 glasses to top center??? */
+  margin: 20px;
+  /* padding: 20px; */
+  font-size: 1.5em;
+}
+
+.notes-table {
+  margin: 0px;
+  /* why not killing margin? */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  column-gap: 20px;
+  background-color: aquamarine;
+}
+
+.notes-table div {
+  list-style: none;
+  background-color: greenyellow;
+  color: red;
 }
