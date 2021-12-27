@@ -3,6 +3,9 @@
   --x-orange: #ed5a2d;
   --x-black-text: rgba(0, 0, 0);
   --x-gold-text: rgba(159, 92, 93, 1);
+  --x-light-blue: #80b8bd;
+  --x-beige: #faf5e8;
+  --x-grey: #e3e3e3;
 }
 
 body {
@@ -73,9 +76,10 @@ header h1 {
 
 .main-slideshow {
   position: relative;
+  text-align: center;
   width: 100%;
 
-  /* overflow: hidden; */
+  /* knock the image back with opacity?? */
 }
 
 /* need to turn this inot a flex with arrows and 2 images */
@@ -84,7 +88,6 @@ header h1 {
 h2 {
   color: white;
   text-shadow: 1px 1px 2px black;
-  text-align: center;
   padding: 10px;
 }
 
@@ -92,17 +95,12 @@ h2 {
   font-size: 3em;
 }
 
-/* how do i fix the button but allow the text to move??? */
-
 .main-slideshow button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin: 0 auto 50px;
   background-color: white;
-  border-color: var(--x-gold-text);
   color: var(--x-gold-text);
+  border: 2px solid;
   padding: 15px 32px;
-  text-align: center;
   font-size: 1.2em;
 }
 
@@ -119,7 +117,7 @@ h2 {
 section > h2 {
   color: var(--x-black-text);
   text-align: center;
-  font-size: 1.4em;
+  font-size: 2em;
   text-shadow: none;
 }
 
@@ -128,12 +126,11 @@ section > h2 {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
   padding: 0;
+  text-align: center;
+  /* you don't need any justify or align !!*/
   /* justify-items: center; */
   /* align-items: center; */
 }
-
-/* FRIDAY/NEXT: get alignment sorted are we working with conatiner or childern?*/
-/* is the li the problem?  use divs? */
 
 .what-style li {
   display: inline-block;
@@ -151,8 +148,10 @@ section > h2 {
 /* the link is same fomrat whether its normal, hovered or viisted or not */
 
 .what-style li img {
+  display: block;
   height: 50px;
   width: 50px;
+  margin: 0 auto;
 }
 
 .meet-the-maker img {
@@ -164,29 +163,20 @@ section > h2 {
   text-align: left;
   padding: 0;
   font-size: 2em;
+  border-bottom: solid 2px var(--x-orange);
+  margin-right: 100px;
 }
 
-/* why doesnt align  work ??? */
-.meet-the-maker hr {
-  text-align: left;
+.orange-heading {
   color: var(--x-orange);
-  width: 200px;
+  font-size: 1.7em;
 }
 
-/* why doesnt this work ??? */
-.meet-the-maker hr::after {
-  color: var(--x-orange);
-  font-size: 1.5em;
-}
-
-/* why is top & left edge lighter? */
 .meet-the-maker button {
   top: 0%;
   left: 0%;
   background-color: white;
-  border-color: var(--x-black-text);
-  /* border-color: red; */
-  color: var(--x-black-text);
+  border: 2px solid;
   padding: 15px 32px;
   text-align: center;
   font-size: 1.2em;
@@ -198,9 +188,9 @@ section > h2 {
   height: 100%;
 }
 
-/* need to center this */
 .sipple-notes img {
-  margin-top: 20px;
+  display: block;
+  margin: 20px auto 0;
   text-align: center;
   width: 80%;
   height: 80%;
@@ -209,16 +199,15 @@ section > h2 {
 .notes-container {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  /* why not centering? */
-  /* why gap to right of glasses? */
+  justify-content: right;
   background-color: DodgerBlue;
 }
 
 .notes-container > div {
   background-color: pink;
+  width: 40%;
   /* how do I align 5 sips to center-right and the 5 glasses to top center??? */
-  margin: 20px;
+  /* margin: 20px; */
   /* padding: 20px; */
   font-size: 1.5em;
 }
@@ -226,8 +215,9 @@ section > h2 {
 .notes-table {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, auto);
-  align-items: center;
+  /* text-align: center; */
+  /* grid-template-rows: repeat(4, auto); */
+  /* align-items: center; */
   /* background-color: aquamarine; */
 }
 
@@ -235,16 +225,16 @@ section > h2 {
   padding-left: 10px;
   padding-right: 10px;
   list-style: none;
-  /* background-color: greenyellow;
-  color: red; */
+  background-color: greenyellow;
+  color: red;
   text-align: center;
   font-size: 1.2em;
 }
 
 /* is this ok? */
 .notes-table div img {
+  background-color: aqua;
   width: 50%;
-  height: 50%;
 }
 
 .notes-table div span {
@@ -253,3 +243,147 @@ section > h2 {
 }
 
 /* how to do the italic for Elton John */
+
+.sipple-notes button {
+  display: block;
+  /* min-width: 300px; */
+  margin: 30px auto;
+  color: var(--x-white);
+  background-color: var(--x-gold-text);
+  border: 2px solid;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.our-favourites {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.our-favourites > div > img {
+  width: 100%;
+}
+
+.centred-text-block {
+  margin: 20px;
+  color: var(--x-gold-text);
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.centred-text-block button {
+  display: block;
+  margin: 30px auto;
+  color: var(--x-white);
+  background-color: var(--x-gold-text);
+  border: 2px solid;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* .photo-stack > div > img {
+  width: 100%;
+  height: 100%;
+} */
+
+.photo-stack img {
+  width: 100%;
+  margin: 0 0 10px 0;
+  /* need to get rid of l & r margin */
+}
+
+.photo-stack button {
+  display: block;
+  margin: 30px auto;
+  color: var(--x-gold-text);
+  background-color: var(--x-white);
+  border: 2px solid;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+figure {
+  background-color: var(--x-light-blue);
+  color: var(--x-white);
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* sort out the margin! */
+
+figure h3 {
+  font-size: 2em;
+}
+
+figure figcaption {
+  font-weight: bold;
+}
+
+.af-for-me {
+  padding-top: 50px;
+  background-color: var(--x-beige);
+}
+
+.af-for-me h1 {
+  color: var(--x-gold-text);
+  font-size: 3em;
+  text-align: center;
+}
+
+.af-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  padding: 0;
+  text-align: center;
+}
+
+.af-list li {
+  display: inline-block;
+  list-style: none;
+  padding-top: 25px;
+  color: var(--x-black-text);
+  font-size: 1.2em;
+}
+
+.af-list li img {
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin: 0 auto 20px;
+}
+
+.af-for-me button {
+  display: block;
+  margin: 20px auto 20px;
+  /* how do I get a bottom margin? */
+  color: var(--x-gold-text);
+  background-color: var(--x-white);
+  border: 2px solid;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.pre-footer {
+  background-color: var(--x-grey);
+  text-align: center;
+  padding-top: 30px;
+  /* font-size: 0.5em; */
+}
+
+.pre-footer li {
+  list-style: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+.pre-footer li a {
+  padding: 0;
+  /* get rid of bullet point padding */
+  color: var(--x-black-text);
+  text-decoration: none;
+}
